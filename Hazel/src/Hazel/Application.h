@@ -2,6 +2,8 @@
 
 #include "Core.h"
 
+#lude "Events/Event.h"
+
 
 namespace Hazel
 {
