@@ -1,5 +1,7 @@
 #pragma once
 
+#include "Event.h"
+
 namespace Hazel {
 
 	class HAZEL_API MouseMovedEvent : public Event
@@ -20,8 +22,7 @@ namespace Hazel {
 		}
 
 		EVENT_CLASS_TYPE(MouseMoved)
-			EVENT_CLASS_CATEGORY(EventCategoryMouse | EventCategoryInput)
-
+		EVENT_CLASS_CATEGORY(EventCategoryMouse | EventCategoryInput)
 	private:
 		float m_MouseX, m_MouseY;
 	};
@@ -39,13 +40,12 @@ namespace Hazel {
 		std::string ToString() const override
 		{
 			std::stringstream ss;
-			ss << "MouseScrolledEvent: " << m_XOffset << ", " << m_YOffset;
+			ss << "MouseScrolledEvent: " << GetXOffset() << ", " << GetYOffset();
 			return ss.str();
 		}
 
 		EVENT_CLASS_TYPE(MouseScrolled)
-			EVENT_CLASS_CATEGORY(EventCategoryMouse | EventCategoryInput)
-
+		EVENT_CLASS_CATEGORY(EventCategoryMouse | EventCategoryInput)
 	private:
 		float m_XOffset, m_YOffset;
 	};
